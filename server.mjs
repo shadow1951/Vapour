@@ -9,7 +9,8 @@ const app=express();
 import { fileURLToPath } from 'url';
 const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename);
-import router from './routes/index.mjs';
+import indexRouter from './routes/index.mjs';
+import homeRouter from './routes/home.mjs';
 import { error } from 'console';
 
 
@@ -28,7 +29,9 @@ app.set('views',path.join(__dirname+'/views'))
 app.use(express.static(path.join(__dirname,'public')))
 app.set('layout','layouts/layouts')
 app.use(expressEjsLayouts)
-app.use('/',router)
+app.use('/index',indexRouter)
+app.use('/home',homeRouter)
+
 
 
 app.listen(process.env.PORT || 3000)
