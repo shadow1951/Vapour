@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,8 @@
     <title>HOME</title>
 </head>
 <body>
+    <script src="./home/button.mjs" defer>
+    </script>
     <style>
         .about{
             background-color: rgb(3, 3, 3);
@@ -30,22 +33,28 @@
             font: serif;
             cursor: pointer;
         }
+        .GAME{
+            background-color: rgb(3, 3, 3);
+            height: 45px;
+            width: 120px;
+            border-color:  rgb(0, 0, 255);
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            font: serif;
+            cursor: pointer;
+        }
     </style>
     
     <button class="about" title="some bullshit" onclick="
     
     "> <a href="http://localhost:3000/home/about">ABOUT</a></button>
     <button class="popular"><a href="http://localhost:3000/home/popular">POPULAR</a></button>
-    
-    <button class="Expreiment" onclick="
-    
-    
-    ">
+    <section id="buttons">
+    <button id ="GAME" class="GAME">
+        GAME
     </button>
-
-    <script>
-        //JAVASCRIPT
-       // alert("WARNING ANY ACTION SUCH AS BUTTON CLICK COULD INJECT WITH MALWARE")
-    </script>
+    </section>
+   <script>
+   </script>
 </body>
 </html>

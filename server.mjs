@@ -1,7 +1,7 @@
 
 import express from 'express';
 import expressEjsLayouts from "express-ejs-layouts";
-import { MongoClient } from 'mongodb';
+import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import { readFile } from 'fs/promises';
 import path from 'path';
@@ -11,19 +11,25 @@ const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename);
 import indexRouter from './routes/index.mjs';
 import homeRouter from './routes/home.mjs';
+import { MongoClient } from 'mongodb';
 import { error } from 'console';
 
 
 async function loadEnv() {
     if (process.env.NODE_ENV !== 'production') {
-        const envPath = path.join(__dirname, '.env');
+        console.log(__dirname)
+        const envPath = path.join(__dirname,'.env');
         const envConfig = await readFile(envPath, 'utf8');
+        console.log(envPath)
         dotenv.config({ path: envPath });
         console.log("WORKING BROOO")
         console.log("checking")
+        const DATABSE_URL=process.env.DATABSE_URL;
+        mongoose.connect(DATABSE_URL)
     }
 }
 await loadEnv()
+
 app.set('view engine','ejs')
 app.set('views',path.join(__dirname+'/views'))
 app.use(express.static(path.join(__dirname,'public')))
