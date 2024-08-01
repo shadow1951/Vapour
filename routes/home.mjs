@@ -7,11 +7,17 @@ const router=expressss.Router();
 router.use(expressss.json())
 
 router.get('/',(request,response)=>{
-    response.render('home')
+    response.render('home/home')
 })
 
-router.get('/about',(request,response)=>{
-    response.render('home/about')
+router.get('/about',async(request,response)=>{
+    var{GName,DName}=request.query
+    if(await details.exists({ gameName:GName, devName:DName}))
+    response.render('home/about',{GName, DName})
+    else{
+        GName='DNE';DName='DNE';
+        response.render('home/about',{GName,DName})
+    }
 })
 
 router.get('/popular',(request,response)=>{

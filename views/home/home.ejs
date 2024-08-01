@@ -7,7 +7,6 @@
     <title>HOME</title>
 </head>
 <body>
-    <script src="./home/button.mjs" defer>
     </script>
     <style>
         .about{
@@ -15,8 +14,6 @@
             height: 45px;
             width: 120px;
             border-color:  rgb(0, 0, 255);
-            border-top-left-radius: 10px;
-            border-bottom-right-radius: 10px;
             font: serif;
             cursor: pointer;
         }
@@ -26,8 +23,6 @@
             height: 45px;
             width: 120px;
             border-color:  rgb(0, 0, 255);
-            border-top-left-radius: 10px;
-            border-bottom-right-radius: 10px;
             font-weight: bold;
             color: azure;
             font: serif;
@@ -38,22 +33,28 @@
             height: 45px;
             width: 120px;
             border-color:  rgb(0, 0, 255);
-            border-top-left-radius: 10px;
-            border-bottom-right-radius: 10px;
             font: serif;
             cursor: pointer;
         }
+        .heading{
+            font-size: 30px;
+            font-family: Futura, sans-serif;
+            font-style:unset;
+            text-align: left;
+            background-color: rgb(3, 3, 63);
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 20px;
+            border-color: black;
+        }
     </style>
+    <p class="heading">VAPOUR  
+        <button class="about" title="some bullshit" >
+        <a href="http://localhost:3000/home/about">ABOUT</a></button>
+        <button class="popular"><a href="http://localhost:3000/home/popular">POPULAR</a></button>
+        <button id ="GAME" class="GAME">GAME</button></p>
+  
     
-    <button class="about" title="some bullshit" onclick="
-    
-    "> <a href="http://localhost:3000/home/about">ABOUT</a></button>
-    <button class="popular"><a href="http://localhost:3000/home/popular">POPULAR</a></button>
-    <section id="buttons">
-    <button id ="GAME" class="GAME">
-        GAME
-    </button>
-    </section>
    <script>
    </script>
 </body>
